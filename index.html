@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+  </head>
+  <body>
+    <form name="submit-to-google-sheet" class="form-container">
+      <div class="form-section-title">
+        <h3>Datos del Alumno</h3>
+      </div>
+
+      <div class="form-section-container">
+
+        <div class="row-container">
+          <div class="input-field">
+            <label for="nombres">Nombres:</label>
+            <input
+              type="text"
+              id="nombres"
+              name="Nombres"
+              maxlength="40"
+              placeholder="Nombres"
+              required
+            />
+          </div>
+
+          <div class="input-field">
+            <label for="apellidos">Apellidos:</label>
+            <input
+              type="text"
+              id="apellidos"
+              name="Apellidos"
+              maxlength="30"
+              placeholder="Apellidos"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="row-container">
+            <div class="input-field">
+                <label for="genero">Género:</label>
+                <select id="genero" name="Género" required>
+                  <option value="Masculino">Masculino</option>
+                  <option value="Femenino">Femenino</option>
+                </select>
+              </div>
+      
+              <div class="input-field">
+                <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+                <input
+                  type="date"
+                  id="fechaNacimiento"
+                  name="Fecha_de_Nacimiento"
+                  required
+                />
+              </div>
+
+              <div class="input-field">
+                <label for="grado">Grado:</label>
+                <select id="grado" name="Grado">
+                  <option value="Preescolar">Preescolar</option>
+                  <option value="Preparatoria">Preparatoria</option>
+                </select>
+              </div>
+
+              <div class="input-field">
+                <label for="tipoSangre">Tipo de Sangre:</label>
+                <select id="tipoSangre" name="Tipo_de_Sangre" required>
+                  <option value="O-">O-</option>
+                  <option value="O+">O+</option>
+                </select>
+              </div>
+
+        </div>
+
+       <div class="row-container">
+        
+        <div class="input-field">
+            <label for="alergias">Alergias: (Dejar en blanco si no sufre de ninguna)</label>
+            <input type="text" id="alergias" name="Alergias" placeholder="Especificar" maxlength="200" />
+          </div>
+
+       </div>
+
+       <div class="form-section-title">
+        <h3>Datos del Padre, Madre o Encargado(a) de Firmar el Contrato</h3>
+      </div>
+
+      <div class="row-container">
+        <div class="input-field">
+          <label for="nombres">Nombres:</label>
+          <input
+            type="text"
+            id="nombres"
+            name="Nombres_Encargado_Firma"
+            maxlength="40"
+            placeholder="Nombres"
+            required
+          />
+        </div>
+
+        <div class="input-field">
+          <label for="apellidos">Apellidos:</label>
+          <input
+            type="text"
+            id="apellidos"
+            name="Apellidos_Encargado_Firma"
+            maxlength="30"
+            placeholder="Apellidos"
+            required
+          />
+        </div>
+      </div>
+
+
+      <div class="row-container">
+        <div class="input-field">
+            <label for="estadoCivil">Estado Civil:</label>
+        <select id="estadoCivil" name="Estado_Civil_Encargado_Firma" required>
+            <option value="Casado(a)">Casado(a)</option>
+            <option value="Soltero(a)">Soltero(a)</option>
+        </select>
+        </div>
+
+        <div class="input-field">
+            <label for="edad">Edad:</label>
+            <input type="number" id="edad" name="Edad_Encargado_Firma" max="99" maxlength="3" placeholder="Edad" required>
+        </div>
+
+        <div class="input-field">
+            <label for="nacionalidad">Nacionalidad:</label>
+             <select id="nacionalidad" name="Nacionalidad_Encargado_Firma" required>
+            <option value="Guatemala">Guatemala</option>
+            <option value="El Salvador">El Salvador</option>
+          
+        </select>
+        </div>
+        
+      </div>
+
+      <div class="row-container">
+        <div class="input-field">
+            <label for="profesion">Profesión:</label>
+            <input type="text" id="profesion" name="Profesión_Encargado_Firma" maxlength="50" placeholder="Profesión" required>
+        </div>
+
+        <div class="input-field">
+            <label for="dpi">DPI:</label>
+            <input type="number" id="dpi" name="DPI_Encargado_Firma" maxlength="13" minlength="13" placeholder="Ej.2326123450101" required>
+        </div>
+
+    </div>
+
+    <div class="row-container">
+        <div class="input-field">
+            <label for="telefonoCasa">Teléfono de Casa:</label>
+        <input type="tel" id="telefonoCasa" placeholder="Ej. 5555-5555" name="Teléfono_Encargado_Firma" required>
+    </div>
+
+        <div class="input-field">
+            <label for="telefonoCelular">Celular:</label>
+            <input type="tel" id="telefonoCelular" placeholder="Ej. 5555-5555" name="Celular_Encargado_Firma" required>
+        </div>
+
+        <div class="input-field">
+            <label for="correo">Correo:</label>
+            <input type="email" id="correo" placeholder="Correo@ejemplo.com" name="Correo_Encargado_Firma">
+        </div>
+
+    </div>
+
+    <div class="row-container">
+        <div class="input-field">
+            <label for="direccion">Dirección de Residencia:</label>
+            <input type="text" id="direccion" placeholder="Dirección" name="Dirección_Encargado_Firma" maxlength="100">
+        </div>
+    </div>
+
+    <div class="form-section-title">
+        <h3>Datos del Padre, Madre o Encargado(a) que no firmará el Contrato</h3>
+      </div>
+
+      <div class="row-container">
+        <div class="input-field">
+          <label for="nombres">Nombres:</label>
+          <input
+            type="text"
+            id="nombres"
+            name="Nombres_Subencargado"
+            maxlength="40"
+            placeholder="Nombres"
+            required
+          />
+        </div>
+
+        <div class="input-field">
+          <label for="apellidos">Apellidos:</label>
+          <input
+            type="text"
+            id="apellidos"
+            name="Apellidos_Subencargado"
+            maxlength="30"
+            placeholder="Apellidos"
+            required
+          />
+        </div>
+      </div>
+
+
+      <div class="row-container">
+        <div class="input-field">
+            <label for="estadoCivil">Estado Civil:</label>
+        <select id="estadoCivil" name="Estado_Civil_Subencargado" required>
+            <option value="Casado(a)">Casado(a)</option>
+            <option value="Soltero(a)">Soltero(a)</option>
+        </select>
+        </div>
+
+        <div class="input-field">
+            <label for="edad">Edad:</label>
+            <input type="number" id="edad" name="Edad_Subencargado" max="99" maxlength="3" placeholder="Edad" required>
+        </div>
+
+        <div class="input-field">
+            <label for="nacionalidad">Nacionalidad:</label>
+             <select id="nacionalidad" name="Nacionalidad_Subencargado" required>
+            <option value="Guatemala">Guatemala</option>
+            <option value="El Salvador">El Salvador</option>
+          
+        </select>
+        </div>
+        
+      </div>
+
+      <div class="row-container">
+        <div class="input-field">
+            <label for="profesion">Profesión:</label>
+            <input type="text" id="profesion" name="Profesión_Subencargado" maxlength="50" placeholder="Profesión" required>
+        </div>
+
+        <div class="input-field">
+            <label for="dpi">DPI:</label>
+            <input type="number" id="dpi" name="DPI_Subencargado" maxlength="13" minlength="13" placeholder="Ej.2326123450101" required>
+        </div>
+
+    </div>
+
+    <div class="row-container">
+        <div class="input-field">
+            <label for="telefonoCasa">Teléfono de Casa:</label>
+        <input type="tel" id="telefonoCasa" placeholder="Ej. 5555-5555" name="Teléfono_Subencargado" required>
+    </div>
+
+        <div class="input-field">
+            <label for="telefonoCelular">Celular:</label>
+            <input type="tel" id="telefonoCelular" placeholder="Ej. 5555-5555" name="Celular_Subencargado" required>
+        </div>
+
+        <div class="input-field">
+            <label for="correo">Correo:</label>
+            <input type="email" id="correo" placeholder="Correo@ejemplo.com" name="Correo_Subencargado">
+        </div>
+
+    </div>
+
+    <div class="row-container">
+        <div class="input-field">
+            <label for="direccion">Dirección de Residencia:</label>
+            <input type="text" id="direccion" placeholder="Dirección" name="Dirección_Subencargado" maxlength="100">
+        </div>
+    </div>
+
+    <div class="form-section-title">
+        <h3>Personas autorizadas para recoger a mi hijo(a) en caso de emergencia</h3>
+      </div>
+
+      <div class="row-container">
+        <div class="input-field">
+            <label for="contactoEmergencia1Nombre">Nombre Persona 1:</label>
+        <input type="text" id="contactoEmergencia1Nombre" name="Contacto_Emergencia_1" maxlength="30">
+        </div>
+
+        <div class="input-field">
+            <label for="contactoEmergencia1Parentesco">Parentesco:</label>
+        <input type="text" id="contactoEmergencia1Parentesco" name="Contacto_Emergencia_1_Parentesco" maxlength="30">
+
+      </div>
+
+      <div class="input-field">
+        <label for="contactoEmergencia1Telefono">Teléfono:</label>
+        <input type="text" id="contactoEmergencia1Telefono" name="Contacto_Emergencia_1_Teléfono" maxlength="30">
+      </div> 
+
+      </div>
+
+      <div class="row-container">
+        <div class="input-field">
+            <label for="contactoEmergencia1Nombre">Nombre Persona 1:</label>
+        <input type="text" id="contactoEmergencia1Nombre" name="Contacto_Emergencia_2" maxlength="30">
+        </div>
+
+        <div class="input-field">
+            <label for="contactoEmergencia1Parentesco">Parentesco:</label>
+        <input type="text" id="contactoEmergencia1Parentesco" name="Contacto_Emergencia_2_Parentesco" maxlength="30">
+
+      </div>
+
+      <div class="input-field">
+        <label for="contactoEmergencia1Telefono">Teléfono:</label>
+        <input type="text" id="contactoEmergencia1Telefono" name="Contacto_Emergencia_2_Teléfono" maxlength="30">
+      </div> 
+
+
+    </div>
+
+    <div class="row-container">
+        <div class="input-field">
+            <label for="autorizacionFotos">Autorizo que las fotos o vídeos donde aparezca mi hijo utilizarse en la página del colegio.</label>
+            <select id="autorizacionFotos" name="Autorizacion_Fotos" required>
+                <option value="Si">Si</option>
+                <option value="No">No</option>
+            </select> 
+        </div>
+    </div>
+
+      <button type="submit" class="form-button">Enviar Datos</button>
+    </form>
+  </body>
+  <script src="script.js"></script>
+</html>
