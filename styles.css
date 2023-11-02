@@ -27,6 +27,8 @@ body{
     box-shadow: 1px 1px 28px 3px #99a4a8c9;
     border-radius: .5rem;
     max-width: 1400px;
+    height: 1800px;
+    margin: 1.5rem 0;
   
    
 }
@@ -105,6 +107,7 @@ body{
     border-radius: .5rem;
     border: none;
     margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
 }
 
 .form-button:hover{
