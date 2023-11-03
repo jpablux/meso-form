@@ -6,13 +6,22 @@
     <link rel="stylesheet" href="styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;900&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="//cdn.tutorialjinni.com/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+
+    
+
 
   </head>
   <body>
+    <div class="parentSuccessMessage" style="display:none;">
+        <div id="submissionMessage" style="display: none;">
+           <p>
+               El formulario se ha enviado correctamente. 
+           </p>
+            <a href="https://colegio-mesoamericano.webflow.io/" class="buttonRedirect">Regresar a Página de Inicio</a>
+        </div>
+    </div>
     <form name="submit-to-google-sheet" class="form-container">
       <div class="form-section-title">
         <h3>Datos del Alumno</h3>
@@ -67,17 +76,33 @@
 
               <div class="input-field">
                 <label for="grado">Grado:</label>
-                <select id="grado" name="Grado">
+                <select id="grado" name="Grado" required>
                   <option value="Preescolar">Preescolar</option>
                   <option value="Preparatoria">Preparatoria</option>
+                  <option value="Primero">Primero</option>
+                  <option value="Segundo">Segundo</option>
+                  <option value="Tercero">Tercero</option>
+                  <option value="Cuarto">Cuarto</option>
+                  <option value="Quinto">Quinto</option>
+                  <option value="Sexto">Sexto</option>
+                  <option value="Séptimo">Séptimo (1ero Básico)</option>
+                  <option value="Octavo">Octavo (2ndo Básico)</option>
+                  <option value="Noveno">Noveno (3ro Básico) </option>
+                  <option value="Décimo">Décimo (4to Bachillerato)</option>
+                  <option value="Décimo_Primero">Décimo Primero(5to Bachillerato)</option>
                 </select>
               </div>
 
               <div class="input-field">
                 <label for="tipoSangre">Tipo de Sangre:</label>
                 <select id="tipoSangre" name="Tipo_de_Sangre" required>
-                  <option value="O-">O-</option>
+                    <option value="A+">A+</option>
+                  <option value="A-">A-</option>
+                  <option value="B+">B+</option>
+                  <option value="AB+">AB+</option>
+                  <option value="AB-">AB-</option>
                   <option value="O+">O+</option>
+                  <option value="O-">O-</option>
                 </select>
               </div>
 
@@ -98,10 +123,10 @@
 
       <div class="row-container">
         <div class="input-field">
-          <label for="nombres">Nombres:</label>
+          <label for="nombresEncargado">Nombres:</label>
           <input
             type="text"
-            id="nombres"
+            id="nombresEncargado"
             name="Nombres_Encargado_Firma"
             maxlength="40"
             placeholder="Nombres"
@@ -110,10 +135,10 @@
         </div>
 
         <div class="input-field">
-          <label for="apellidos">Apellidos:</label>
+          <label for="apellidosEncargado">Apellidos:</label>
           <input
             type="text"
-            id="apellidos"
+            id="apellidosEncargado"
             name="Apellidos_Encargado_Firma"
             maxlength="30"
             placeholder="Apellidos"
@@ -125,24 +150,22 @@
 
       <div class="row-container">
         <div class="input-field">
-            <label for="estadoCivil">Estado Civil:</label>
-        <select id="estadoCivil" name="Estado_Civil_Encargado_Firma" required>
+            <label for="estadoCivilEncargado">Estado Civil:</label>
+        <select id="estadoCivilEncargado" name="Estado_Civil_Encargado_Firma" required>
             <option value="Casado(a)">Casado(a)</option>
             <option value="Soltero(a)">Soltero(a)</option>
         </select>
         </div>
 
         <div class="input-field">
-            <label for="edad">Edad:</label>
-            <input type="number" id="edad" name="Edad_Encargado_Firma" max="99" maxlength="3" placeholder="Edad" required>
+            <label for="edadEncargado">Edad:</label>
+            <input type="number" id="edadEncargado" name="Edad_Encargado_Firma" max="99" maxlength="3" placeholder="Edad" required>
         </div>
 
         <div class="input-field">
-            <label for="nacionalidad">Nacionalidad:</label>
-             <select id="nacionalidad" name="Nacionalidad_Encargado_Firma" required>
-            <option value="Guatemala">Guatemala</option>
-            <option value="El Salvador">El Salvador</option>
-          
+            <label for="nacionalidadEncargado">Nacionalidad:</label>
+             <input class="text" id="nacionalidadEncargado" name="Nacionalidad_Encargado_Firma" placeholder="Nacionalidad" required />
+
         </select>
         </div>
         
@@ -150,39 +173,39 @@
 
       <div class="row-container">
         <div class="input-field">
-            <label for="profesion">Profesión:</label>
-            <input type="text" id="profesion" name="Profesión_Encargado_Firma" maxlength="50" placeholder="Profesión" required>
+            <label for="profesionEncargado">Profesión:</label>
+            <input type="text" id="profesionEncargado" name="Profesión_Encargado_Firma" maxlength="50" placeholder="Profesión" required>
         </div>
 
         <div class="input-field">
-            <label for="dpi">DPI:</label>
-            <input type="number" id="dpi" name="DPI_Encargado_Firma" maxlength="13" minlength="13" placeholder="Ej.2326123450101" required>
-        </div>
-
-    </div>
-
-    <div class="row-container">
-        <div class="input-field">
-            <label for="telefonoCasa">Teléfono de Casa:</label>
-        <input type="tel" id="telefonoCasa" placeholder="Ej. 5555-5555" name="Teléfono_Encargado_Firma" required>
-    </div>
-
-        <div class="input-field">
-            <label for="telefonoCelular">Celular:</label>
-            <input type="tel" id="telefonoCelular" placeholder="Ej. 5555-5555" name="Celular_Encargado_Firma" required>
-        </div>
-
-        <div class="input-field">
-            <label for="correo">Correo:</label>
-            <input type="email" id="correo" placeholder="Correo@ejemplo.com" name="Correo_Encargado_Firma">
+            <label for="dpiEncargado">DPI:</label>
+            <input type="number" id="dpiEncargado" name="DPI_Encargado_Firma" maxlength="13" minlength="13" placeholder="Ej.2326123450101" required>
         </div>
 
     </div>
 
     <div class="row-container">
         <div class="input-field">
-            <label for="direccion">Dirección de Residencia:</label>
-            <input type="text" id="direccion" placeholder="Dirección" name="Dirección_Encargado_Firma" maxlength="100">
+            <label for="telefonoCasaEncargado">Teléfono de Casa:</label>
+        <input type="tel" id="telefonoCasaEncargado" placeholder="Ej. 5555-5555" name="Teléfono_Encargado_Firma" required>
+    </div>
+
+        <div class="input-field">
+            <label for="telefonoCelularEncargado">Celular:</label>
+            <input type="tel" id="telefonoCelularEncargado" placeholder="Ej. 5555-5555" name="Celular_Encargado_Firma" required>
+        </div>
+
+        <div class="input-field">
+            <label for="correoEncargado">Correo:</label>
+            <input type="email" id="correoEncargado" placeholder="Correo@ejemplo.com" name="Correo_Encargado_Firma">
+        </div>
+
+    </div>
+
+    <div class="row-container">
+        <div class="input-field">
+            <label for="direccionEncargado">Dirección de Residencia:</label>
+            <input type="text" id="direccionEncargado" placeholder="Dirección" name="Dirección_Encargado_Firma" maxlength="100">
         </div>
     </div>
 
@@ -192,10 +215,10 @@
 
       <div class="row-container">
         <div class="input-field">
-          <label for="nombres">Nombres:</label>
+          <label for="nombresSubencargado">Nombres:</label>
           <input
             type="text"
-            id="nombres"
+            id="nombresSubencargado"
             name="Nombres_Subencargado"
             maxlength="40"
             placeholder="Nombres"
@@ -204,10 +227,10 @@
         </div>
 
         <div class="input-field">
-          <label for="apellidos">Apellidos:</label>
+          <label for="apellidosSubencargado">Apellidos:</label>
           <input
             type="text"
-            id="apellidos"
+            id="apellidosSubencargado"
             name="Apellidos_Subencargado"
             maxlength="30"
             placeholder="Apellidos"
@@ -219,23 +242,22 @@
 
       <div class="row-container">
         <div class="input-field">
-            <label for="estadoCivil">Estado Civil:</label>
-        <select id="estadoCivil" name="Estado_Civil_Subencargado" required>
+            <label for="estadoCivilSubencargado">Estado Civil:</label>
+        <select id="estadoCivilSubencargado" name="Estado_Civil_Subencargado" required>
             <option value="Casado(a)">Casado(a)</option>
             <option value="Soltero(a)">Soltero(a)</option>
         </select>
         </div>
 
         <div class="input-field">
-            <label for="edad">Edad:</label>
-            <input type="number" id="edad" name="Edad_Subencargado" max="99" maxlength="3" placeholder="Edad" required>
+            <label for="edadSubencargado">Edad:</label>
+            <input type="number" id="edadSubencargado" name="Edad_Subencargado" max="99" maxlength="3" placeholder="Edad" required>
         </div>
 
         <div class="input-field">
-            <label for="nacionalidad">Nacionalidad:</label>
-             <select id="nacionalidad" name="Nacionalidad_Subencargado" required>
-            <option value="Guatemala">Guatemala</option>
-            <option value="El Salvador">El Salvador</option>
+            <label for="nacionalidadSubencargado">Nacionalidad:</label>
+             <input type="text" id="nacionalidadSubencargado" name="Nacionalidad_Subencargado" placeholder="Nacionalidad" required>
+          
           
         </select>
         </div>
@@ -244,39 +266,39 @@
 
       <div class="row-container">
         <div class="input-field">
-            <label for="profesion">Profesión:</label>
-            <input type="text" id="profesion" name="Profesión_Subencargado" maxlength="50" placeholder="Profesión" required>
+            <label for="profesionSubencargado">Profesión:</label>
+            <input type="text" id="profesionSubencargado" name="Profesión_Subencargado" maxlength="50" placeholder="Profesión" required>
         </div>
 
         <div class="input-field">
-            <label for="dpi">DPI:</label>
-            <input type="number" id="dpi" name="DPI_Subencargado" maxlength="13" minlength="13" placeholder="Ej.2326123450101" required>
-        </div>
-
-    </div>
-
-    <div class="row-container">
-        <div class="input-field">
-            <label for="telefonoCasa">Teléfono de Casa:</label>
-        <input type="tel" id="telefonoCasa" placeholder="Ej. 5555-5555" name="Teléfono_Subencargado" required>
-    </div>
-
-        <div class="input-field">
-            <label for="telefonoCelular">Celular:</label>
-            <input type="tel" id="telefonoCelular" placeholder="Ej. 5555-5555" name="Celular_Subencargado" required>
-        </div>
-
-        <div class="input-field">
-            <label for="correo">Correo:</label>
-            <input type="email" id="correo" placeholder="Correo@ejemplo.com" name="Correo_Subencargado">
+            <label for="dpiSubencargado">DPI:</label>
+            <input type="number" id="dpiSubencargado" name="DPI_Subencargado" maxlength="13" minlength="13" placeholder="Ej.2326123450101" required>
         </div>
 
     </div>
 
     <div class="row-container">
         <div class="input-field">
-            <label for="direccion">Dirección de Residencia:</label>
-            <input type="text" id="direccion" placeholder="Dirección" name="Dirección_Subencargado" maxlength="100">
+            <label for="telefonoCasaSubencargado">Teléfono de Casa:</label>
+        <input type="tel" id="telefonoCasaSubencargado" placeholder="Ej. 5555-5555" name="Teléfono_Subencargado" required>
+    </div>
+
+        <div class="input-field">
+            <label for="telefonoCelularSubencargado">Celular:</label>
+            <input type="tel" id="telefonoCelularSubencargado" placeholder="Ej. 5555-5555" name="Celular_Subencargado" required>
+        </div>
+
+        <div class="input-field">
+            <label for="correoSubencargado">Correo:</label>
+            <input type="email" id="correoSubencargado" placeholder="Correo@ejemplo.com" name="Correo_Subencargado">
+        </div>
+
+    </div>
+
+    <div class="row-container">
+        <div class="input-field">
+            <label for="direccionSubencargado">Dirección de Residencia:</label>
+            <input type="text" id="direccionSubencargado" placeholder="Dirección" name="Dirección_Subencargado" maxlength="100">
         </div>
     </div>
 
@@ -287,37 +309,37 @@
       <div class="row-container">
         <div class="input-field">
             <label for="contactoEmergencia1Nombre">Nombre Persona 1:</label>
-        <input type="text" id="contactoEmergencia1Nombre" name="Contacto_Emergencia_1" maxlength="30">
+        <input type="text" id="contactoEmergencia1Nombre" name="Contacto_Emergencia_1" maxlength="30" placeholder="Nombre">
         </div>
 
         <div class="input-field">
             <label for="contactoEmergencia1Parentesco">Parentesco:</label>
-        <input type="text" id="contactoEmergencia1Parentesco" name="Contacto_Emergencia_1_Parentesco" maxlength="30">
+        <input type="text" id="contactoEmergencia1Parentesco" name="Contacto_Emergencia_1_Parentesco" maxlength="30" placeholder="Parentesco">
 
       </div>
 
       <div class="input-field">
         <label for="contactoEmergencia1Telefono">Teléfono:</label>
-        <input type="text" id="contactoEmergencia1Telefono" name="Contacto_Emergencia_1_Teléfono" maxlength="30">
+        <input type="tel" id="contactoEmergencia1Telefono" name="Contacto_Emergencia_1_Teléfono" maxlength="30" placeholder="Teléfono">
       </div> 
 
       </div>
 
       <div class="row-container">
         <div class="input-field">
-            <label for="contactoEmergencia1Nombre">Nombre Persona 1:</label>
-        <input type="text" id="contactoEmergencia1Nombre" name="Contacto_Emergencia_2" maxlength="30">
+            <label for="contactoEmergencia2Nombre">Nombre Persona 2:</label>
+        <input type="text" id="contactoEmergencia2Nombre" name="Contacto_Emergencia_2" maxlength="30" placeholder="Nombre">
         </div>
 
         <div class="input-field">
-            <label for="contactoEmergencia1Parentesco">Parentesco:</label>
-        <input type="text" id="contactoEmergencia1Parentesco" name="Contacto_Emergencia_2_Parentesco" maxlength="30">
+            <label for="contactoEmergenciaParentesco2">Parentesco:</label>
+        <input type="text" id="contactoEmergenciaParentesco2" name="Contacto_Emergencia_2_Parentesco" maxlength="30" placeholder="Parentesco">
 
       </div>
 
       <div class="input-field">
-        <label for="contactoEmergencia1Telefono">Teléfono:</label>
-        <input type="text" id="contactoEmergencia1Telefono" name="Contacto_Emergencia_2_Teléfono" maxlength="30">
+        <label for="contactoEmergencia2Telefono">Teléfono:</label>
+        <input type="tel" id="contactoEmergencia2Telefono" name="Contacto_Emergencia_2_Teléfono" maxlength="30" placeholder="Teléfono">
       </div> 
 
 
@@ -336,5 +358,7 @@
       <button type="submit" class="form-button">Enviar Datos</button>
     </form>
   </body>
+
   <script src="script.js"></script>
+  
 </html>
